@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telesales Supervisor — Interview Prep Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#080a0f}
+::-webkit-scrollbar-thumb{background:#fe2c55;border-radius:2px}
+:root{
+  --bg:#080a0f;--s1:#0d1018;--s2:#121620;--s3:#191e2c;--line:#1e2436;
+  --red:#fe2c55;--redd:rgba(254,44,85,.12);--green:#00e5a0;--amber:#ffb800;
+  --blue:#4da6ff;--purple:#b06cff;--text:#eef0f6;--mid:#8892aa;--dim:#424d66;
+  --fh:'Instrument Serif',serif;--fb:'Outfit',sans-serif;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 2rem 5rem;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(254,44,85,.18) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none}
+.ga,.gb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(100px)}
+.ga{width:600px;height:600px;background:rgba(254,44,85,.09);top:-150px;right:-150px}
+.gb{width:400px;height:400px;background:rgba(77,166,255,.06);bottom:-100px;left:-100px}
+.hi{position:relative;max-width:900px;margin:0 auto;z-index:2}
+.ey{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);color:var(--mid);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;background:var(--s1);animation:up .5s ease both}
+.eyd{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.ht{font-family:var(--fh);font-size:clamp(2.8rem,8vw,6.5rem);line-height:1;letter-spacing:-.02em;animation:up .5s .08s ease both}
+h1.ht em{font-style:italic;color:var(--red);display:block}
+.hd{font-size:1rem;color:var(--mid);max-width:540px;margin:1.5rem 0 2.5rem;animation:up .5s .16s ease both}
+.hps{display:flex;flex-wrap:wrap;gap:.6rem;animation:up .5s .22s ease both}
+.pi{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:100px;font-size:.75rem;font-weight:600;border:1px solid var(--line);background:var(--s1);color:var(--mid)}
+.pi.r{border-color:rgba(254,44,85,.35);background:rgba(254,44,85,.08);color:var(--red)}
+.pi.g{border-color:rgba(0,229,160,.3);background:rgba(0,229,160,.06);color:var(--green)}
+.pi.a{border-color:rgba(255,184,0,.3);background:rgba(255,184,0,.06);color:var(--amber)}
+.pi.b{border-color:rgba(77,166,255,.3);background:rgba(77,166,255,.06);color:var(--blue)}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(8,10,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nw{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;gap:0}
+.nw::-webkit-scrollbar{display:none}
+.nb2{font-family:var(--fh);font-style:italic;font-size:1.05rem;color:var(--red);padding:1rem 1.2rem 1rem 0;border-right:1px solid var(--line);margin-right:.5rem;flex-shrink:0;white-space:nowrap}
+.nb{flex-shrink:0;padding:.9rem 1rem;font-size:.73rem;font-weight:600;letter-spacing:.04em;color:var(--dim);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;font-family:var(--fb)}
+.nb:hover{color:var(--text)}.nb.on{color:var(--red);border-bottom-color:var(--red)}
+
+/* LAYOUT */
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem 8rem}
+.sec{display:none;padding-top:3.5rem}
+.sec.on{display:block;animation:si .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes si{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION HEADER */
+.sh{display:flex;align-items:flex-end;gap:1.2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line);margin-bottom:2rem;flex-wrap:wrap}
+.shn{font-family:var(--fh);font-style:italic;font-size:4.5rem;line-height:1;color:var(--line);flex-shrink:0}
+.sht{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem}
+.shh{font-family:var(--fh);font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1;letter-spacing:-.01em}
+.shs{font-size:.85rem;color:var(--mid);margin-top:.35rem;max-width:600px}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem}
+
+/* CARD */
+.card{background:var(--s1);border:1px solid var(--line);border-radius:8px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--cc,var(--red));opacity:.5}
+.card:hover{border-color:rgba(254,44,85,.3);transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.ct{font-weight:700;display:flex;align-items:center;gap:.55rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:var(--cc,var(--red))}
+.ci{width:32px;height:32px;background:rgba(254,44,85,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+
+/* LIST */
+ul.bl{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+ul.bl li{display:flex;gap:.6rem;align-items:flex-start;font-size:.84rem;color:#aab4cc;line-height:1.55}
+ul.bl li::before{content:'';width:4px;height:4px;background:var(--cc,var(--red));border-radius:50%;flex-shrink:0;margin-top:.5rem}
+ul.bl b{color:var(--text);font-weight:600}
+
+/* ACCORDION */
+.ql{display:flex;flex-direction:column;gap:.5rem}
+.qi{background:var(--s1);border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.qi:hover{border-color:rgba(254,44,85,.25)}.qi.open{border-color:rgba(254,44,85,.4)}
+.qh{display:flex;align-items:center;gap:.85rem;padding:.95rem 1.2rem;cursor:pointer;user-select:none;transition:background .2s}
+.qh:hover{background:rgba(255,255,255,.02)}.qi.open .qh{background:rgba(254,44,85,.04);border-bottom:1px solid var(--line)}
+.qn{font-family:var(--fh);font-style:italic;font-size:1.3rem;color:var(--line);flex-shrink:0;width:26px;text-align:center;transition:color .2s}
+.qi.open .qn{color:var(--red)}
+.qcat{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.18rem .5rem;border-radius:3px;flex-shrink:0}
+.cl{background:rgba(77,166,255,.15);color:var(--blue)}.co{background:rgba(0,229,160,.15);color:var(--green)}
+.cp{background:rgba(254,44,85,.15);color:var(--red)}.cs{background:rgba(255,184,0,.15);color:var(--amber)}
+.cx{background:rgba(176,108,255,.15);color:var(--purple)}
+.dif{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .5rem;border-radius:3px;flex-shrink:0}
+.de{background:rgba(0,229,160,.1);color:var(--green)}.dm{background:rgba(255,184,0,.1);color:var(--amber)}.dh{background:rgba(254,44,85,.1);color:var(--red)}
+.qt{font-size:.87rem;font-weight:600;flex:1;line-height:1.4}
+.qar{color:var(--dim);font-size:.65rem;transition:transform .25s;flex-shrink:0}
+.qi.open .qar{transform:rotate(180deg);color:var(--red)}
+.qb{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.qi.open .qb{max-height:1200px}
+.qbi{padding:1.2rem 1.2rem 1.3rem}
+.al{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.at{font-size:.86rem;color:#aab4cc;line-height:1.75}.at b{color:var(--text);font-weight:600}.at em{color:var(--green);font-style:normal;font-weight:600}
+.atip{margin-top:.9rem;padding:.75rem 1rem;background:rgba(255,184,0,.06);border-left:2px solid var(--amber);border-radius:0 5px 5px 0;font-size:.8rem;color:#aab4cc;line-height:1.6}
+.atip strong{color:var(--amber)}
+
+/* FLOW */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;background:var(--s2);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.fs{flex:1;min-width:140px;padding:1.2rem 1rem;position:relative;border-right:1px solid var(--line);transition:background .2s}
+.fs:last-child{border-right:none}.fs:hover{background:rgba(254,44,85,.04)}
+.fs::after{content:'›';position:absolute;right:-.65rem;top:50%;transform:translateY(-50%);color:var(--dim);font-size:1.2rem;z-index:2}
+.fs:last-child::after{display:none}
+.fn{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem}
+.ftl{font-weight:700;font-size:.9rem;margin-bottom:.3rem}
+.fd{font-size:.78rem;color:var(--mid);line-height:1.45}
+
+/* TABLE FIXES */
+.tbl-wrap{width:100%;overflow-x:auto;border-radius:8px;margin-bottom:0.5rem;-webkit-overflow-scrolling:touch}
+.tbl{width:100%;border-collapse:collapse;font-size:.83rem;min-width:600px}
+.tbl th{text-align:left;padding:.7rem 1rem;background:var(--s2);color:var(--mid);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+.tbl td{padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.03);color:#aab4cc;vertical-align:top;line-height:1.5;white-space:normal}
+.tbl tr:last-child td{border-bottom:none}.tbl td:first-child{color:var(--text);font-weight:600}.tbl tr:hover td{background:rgba(254,44,85,.02)}
+
+/* TIMELINE */
+.tl{position:relative;display:flex;flex-direction:column;gap:0}
+.tl::before{content:'';position:absolute;left:16px;top:18px;bottom:18px;width:1px;background:linear-gradient(to bottom,var(--red),transparent)}
+.ti{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.4rem;position:relative}
+.td2{width:32px;height:32px;flex-shrink:0;background:var(--s3);border:1px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--red);z-index:2}
+.tb{padding-top:.2rem}.tt{font-weight:700;font-size:.88rem;margin-bottom:.2rem}.ts{font-size:.8rem;color:var(--mid);line-height:1.5}
+
+/* CALLOUT */
+.callout{display:flex;gap:1rem;background:var(--s2);border:1px solid var(--line);border-left:2px solid var(--red);border-radius:0 8px 8px 0;padding:1.1rem 1.3rem;font-size:.84rem;color:#aab4cc;line-height:1.6;margin-top:1rem}
+.callout.g{border-left-color:var(--green)}.callout.a{border-left-color:var(--amber)}.callout.b{border-left-color:var(--blue)}
+.callout b{color:var(--text)}.ci2{font-size:1.1rem;flex-shrink:0}
+
+/* PHRASE */
+.phrases{display:flex;flex-direction:column;gap:.6rem}
+.ph{padding:.85rem 1.1rem;background:var(--s2);border:1px solid var(--line);border-radius:6px;font-size:.86rem;color:#ccd1e0;font-style:italic;line-height:1.55;position:relative;padding-left:2rem;transition:border-color .2s}
+.ph:hover{border-color:rgba(254,44,85,.3)}
+.ph::before{content:'"';position:absolute;left:.7rem;top:.6rem;color:var(--red);font-size:1.4rem;font-style:normal;line-height:1;font-family:var(--fh)}
+
+/* SCORE */
+.sbars{display:flex;flex-direction:column;gap:.85rem}
+.srow{display:flex;flex-direction:column;gap:.3rem}
+.slabel{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600}
+.slabel span:last-child{color:var(--mid)}
+.strack{height:5px;background:var(--s3);border-radius:3px;overflow:hidden}
+.sfill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--red),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.sfill.go{transform:scaleX(1)}
+
+/* WARN */
+.warn{display:flex;gap:.9rem;align-items:flex-start;background:rgba(255,184,0,.06);border:1px solid rgba(255,184,0,.25);border-radius:8px;padding:1.2rem 1.4rem;font-size:.84rem;color:#aab4cc;line-height:1.65;margin-bottom:1.2rem}
+.warn b{color:var(--amber)}
+
+footer{border-top:1px solid var(--line);padding:2rem;text-align:center;font-size:.75rem;color:var(--dim)}
+footer span{color:var(--red)}
+@media(max-width:640px){h1.ht{font-size:2.8rem}.fs{min-width:100%;border-right:none;border-bottom:1px solid var(--line)}.fs::after{display:none}.qcat,.dif{display:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="ga"></div><div class="gb"></div>
+  <div class="hi">
+    <div class="ey"><span class="eyd"></span>From HR Kisi-Kisi · Full English Interview</div>
+    <h1 class="ht">Telesales Supervisor<em>Interview Guide</em></h1>
+    <p class="hd">Strategic, proactive answers built directly from your HR brief. Think like a leader — not a follower of existing process.</p>
+    <div class="hps">
+      <span class="pi r">📋 5 HR Topics Covered</span>
+      <span class="pi g">🎯 30+ Practice Questions</span>
+      <span class="pi a">💬 Full English Answers</span>
+      <span class="pi b">⚡ Strategic Framing</span>
+    </div>
+  </div>
+</section>
+
+<nav class="nav">
+  <div class="nw">
+    <div class="nb2">TTS · Supervisor</div>
+    <button class="nb on"  onclick="go('overview')">📋 Overview</button>
+    <button class="nb" onclick="go('jobdesk')">🎯 Jobdesk</button>
+    <button class="nb" onclick="go('telesales')">📞 Telesales</button>
+    <button class="nb" onclick="go('initiative')">💡 Initiative</button>
+    <button class="nb" onclick="go('tough')">🔥 Tough Situations</button>
+    <button class="nb" onclick="go('qacore')">⭐️ Q&A Core</button>
+    <button class="nb" onclick="go('qa')">💬 Full Q&A</button>
+    <button class="nb" onclick="go('tips')">✨ Tips & Phrases</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- OVERVIEW -->
+<section id="overview" class="sec on">
+  <div class="sh"><div class="shn">00</div><div><div class="sht">HR Brief Breakdown</div><div class="shh">What HR Is Looking For</div><div class="shs">5 areas from your HR kisi-kisi — mapped to what you must show in every single answer.</div></div></div>
+
+  <div class="warn"><span style="font-size:1.3rem">⚠️</span><span><b>Critical from HR:</b> This interview is <b>full English — zero language mixing.</b> Prepare every answer in English. Practice out loud. Also: stable internet, join on time, answer to the point.</span></div>
+
+  <div class="g3" style="margin-bottom:1rem">
+    <div class="card" style="--cc:var(--red)"><div class="ct"><span class="ci">🎯</span>1 · Supervisor Jobdesk</div><ul class="bl" style="--cc:var(--red)"><li>Monitor KPI: call volume, conversion, revenue</li><li>Agent retention & engagement</li><li>Coaching & structured feedback</li><li>Handle escalations decisively</li><li>Push and track daily targets</li></ul></div>
+    <div class="card" style="--cc:var(--green)"><div class="ct"><span class="ci">📞</span>2 · Telesales Understanding</div><ul class="bl" style="--cc:var(--green)"><li>Call → Pitch → Objection → Close flow</li><li>Conversion rate & productivity focus</li><li>Explain how to improve team performance</li><li>Analyse what makes a good vs bad call</li></ul></div>
+    <div class="card" style="--cc:var(--blue)"><div class="ct"><span class="ci">💡</span>3 · Initiative & Strategy</div><ul class="bl" style="--cc:var(--blue)"><li><b>Never say "I learned it from my TL"</b></li><li>Own ideas: script improvement, call analysis</li><li>Daily tracking + quick coaching sessions</li><li>Mini competitions, incentive programs</li></ul></div>
+    <div class="card" style="--cc:var(--amber)"><div class="ct"><span class="ci">🔥</span>4 · Tough Situations</div><ul class="bl" style="--cc:var(--amber)"><li>Real example: target drop scenario</li><li>Show: analyse → action → result</li><li>Give % improvement if possible</li><li>Show ownership, not excuses</li></ul></div>
+    <div class="card" style="--cc:var(--purple)"><div class="ct"><span class="ci">🎙️</span>5 · Interview Execution</div><ul class="bl" style="--cc:var(--purple)"><li>Full English — zero language switching</li><li>Stable internet, join on time</li><li>To the point, clear, structured answers</li><li>Think as leader — proactive & strategic</li></ul></div>
+  </div>
+
+  <div class="card" style="--cc:var(--red);margin-bottom:1rem">
+    <div class="ct"><span class="ci">🧠</span>The Mindset Shift HR Wants to See</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <tr><th>Topic</th><th>❌ Passive / Basic</th><th>✅ Strategic / Leader</th></tr>
+        <tr><td>Improving team</td><td>"I follow the existing process"</td><td>"I analyse call recordings weekly, find the top 3 friction points, and update the script"</td></tr>
+        <tr><td>Low performance</td><td>"I'll report it to my manager"</td><td>"I pull the data first, identify if it's skill, motivation, or process — then act on each differently"</td></tr>
+        <tr><td>Motivation</td><td>"I give them encouragement"</td><td>"I run weekly mini-sprints with specific targets and visible rewards — competition works when stakes are visible"</td></tr>
+        <tr><td>Retention</td><td>"I treat them well"</td><td>"I have monthly 1-on-1s specifically about career growth — agents stay when they see a future"</td></tr>
+        <tr><td>Target miss</td><td>"I'll try harder"</td><td>"I break down the gap by agent and by call stage — find exactly where the funnel is leaking and fix that point"</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="--cc:var(--green)">
+    <div class="ct"><span class="ci">📊</span>Estimated Scoring Weight</div>
+    <div class="sbars" id="sbars">
+      <div class="srow"><div class="slabel"><span>Leadership Thinking & Initiative</span><span>30%</span></div><div class="strack"><div class="sfill" style="width:30%"></div></div></div>
+      <div class="srow"><div class="slabel"><span>Telesales Process Knowledge</span><span>25%</span></div><div class="strack"><div class="sfill" style="width:25%"></div></div></div>
+      <div class="srow"><div class="slabel"><span>Tough Situation Handling (with results)</span><span>20%</span></div><div class="strack"><div class="sfill" style="width:20%"></div></div></div>
+      <div class="srow"><div class="slabel"><span>People Management & Coaching</span><span>15%</span></div><div class="strack"><div class="sfill" style="width:15%"></div></div></div>
+      <div class="srow"><div class="slabel"><span>English Communication & Delivery</span><span>10%</span></div><div class="strack"><div class="sfill" style="width:10%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBDESK -->
+<section id="jobdesk" class="sec">
+  <div class="sh"><div class="shn">01</div><div><div class="sht">HR Topic 1</div><div class="shh">Supervisor Responsibilities</div><div class="shs">Know your role deeply — KPI monitoring, agent retention, coaching, escalation, daily target push.</div></div></div>
+
+  <div class="card" style="--cc:var(--green);margin-bottom:1rem">
+    <div class="ct"><span class="ci">📊</span>KPIs You Must Know Cold</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <tr><th>KPI</th><th>What It Measures</th><th>Your Action as Supervisor</th></tr>
+        <tr><td>Call Volume</td><td>Number of calls per agent per day</td><td>Set daily targets. Check hourly via dashboard. If an agent is behind by 10AM, intervene immediately — not at EOD.</td></tr>
+        <tr><td>Conversion Rate</td><td>% of calls resulting in a closed sale</td><td>Weekly call analysis — find which stage agents are losing prospects. Script coaching per individual failure point.</td></tr>
+        <tr><td>Revenue / GMV</td><td>Total sales value by team</td><td>Break down daily target per agent. Use visible leaderboard to drive healthy competition.</td></tr>
+        <tr><td>AHT</td><td>Average Handle Time per call</td><td>Monitor outliers. Too long = struggling with objections. Too short = rushing. Coach both directions.</td></tr>
+        <tr><td>Retention Rate</td><td>% of agents staying over time</td><td>Monthly career 1-on-1s. Spot burnout signals early — act before they resign.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card" style="--cc:var(--red)">
+      <div class="ct"><span class="ci">🔺</span>Escalation Framework</div>
+      <div class="tl">
+        <div class="ti"><div class="td2">1</div><div class="tb"><div class="tt">Agent signals escalation</div><div class="ts">Don't let them struggle silently. Intervene the moment they flag it.</div></div></div>
+        <div class="ti"><div class="td2">2</div><div class="tb"><div class="tt">Supervisor takes the call</div><div class="ts">Lead with empathy first — "I understand your frustration." De-escalate tone before addressing the issue.</div></div></div>
+        <div class="ti"><div class="td2">3</div><div class="tb"><div class="tt">Resolve or escalate to L2</div><div class="ts">Within authority → resolve with gesture if needed. Beyond authority → warm transfer with full context, no cold handoffs.</div></div></div>
+        <div class="ti"><div class="td2">4</div><div class="tb"><div class="tt">Post-call debrief with agent</div><div class="ts">Every escalation is a coaching moment. "Here's what we learned. Here's how to handle it next time."</div></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="--cc:var(--blue)">
+      <div class="ct"><span class="ci">🔄</span>Daily Target Push — Your Routine</div>
+      <ul class="bl" style="--cc:var(--blue)">
+        <li><b>8AM:</b> Morning huddle — today's target, top focus, one quick tip.</li>
+        <li><b>10AM:</b> First check — who's on track, who needs a nudge.</li>
+        <li><b>12PM:</b> Midday pulse — re-share leaderboard. Create urgency for the second half.</li>
+        <li><b>2PM:</b> Quick coaching for anyone behind. One specific fix only — not a lecture.</li>
+        <li><b>4PM:</b> Final push — call out who's close to their target. Peer motivation kicks in.</li>
+        <li><b>EOD:</b> Recap — celebrate wins publicly, log blockers for tomorrow's plan.</li>
+      </ul>
+      <div class="callout b"><span class="ci2">💡</span><span><b>Strategic frame:</b> Don't just push. <b>Create visibility.</b> When agents see the leaderboard in real time, they push themselves.</span></div>
+    </div>
+
+    <div class="card" style="--cc:var(--amber);grid-column:1/-1">
+      <div class="ct"><span class="ci">🤝</span>Agent Retention — Proactive, Not Reactive</div>
+      <div class="g2" style="margin-top:.5rem">
+        <ul class="bl" style="--cc:var(--amber)">
+          <li><b>Monthly career 1-on-1s</b> — focused on growth and challenges, not just numbers.</li>
+          <li><b>Early burnout detection:</b> Drop in call quality, shorter calls, less engagement — act before they resign.</li>
+          <li><b>Stretch roles for top performers:</b> Let them mentor a new agent or lead a mini-session. Boredom causes exits.</li>
+        </ul>
+        <ul class="bl" style="--cc:var(--amber)">
+          <li><b>Visible recognition:</b> Announce wins in team chat. People leave managers who don't see their effort.</li>
+          <li><b>Address grievances fast:</b> Even if you can't fix it immediately, acknowledge it quickly.</li>
+          <li><b>Build team identity:</b> Shared goals, team name, culture — people stay where they feel they belong.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELESALES -->
+<section id="telesales" class="sec">
+  <div class="sh"><div class="shn">02</div><div><div class="sht">HR Topic 2</div><div class="shh">Telesales Mastery</div><div class="shs">Know the full sales funnel — and explain how you improve each stage as a Supervisor.</div></div></div>
+
+  <div class="flow">
+    <div class="fs"><div class="fn">Stage 1</div><div class="ftl">📞 Opening</div><div class="fd">Hook in 10 seconds. Don't pitch yet — earn their attention first.</div></div>
+    <div class="fs"><div class="fn">Stage 2</div><div class="ftl">🔍 Discovery</div><div class="fd">Ask 2+ questions. Understand the need before you pitch.</div></div>
+    <div class="fs"><div class="fn">Stage 3</div><div class="ftl">🎯 Pitching</div><div class="fd">Present as a solution, not a feature list. Lead with "This means for you..."</div></div>
+    <div class="fs"><div class="fn">Stage 4</div><div class="ftl">🛡 Objection</div><div class="fd">Acknowledge → validate → reframe. Never argue. Solve the concern.</div></div>
+    <div class="fs"><div class="fn">Stage 5</div><div class="ftl">✅ Closing</div><div class="fd">Assumptive close. Create urgency. Ask for the decision confidently.</div></div>
+    <div class="fs"><div class="fn">Stage 6</div><div class="ftl">🔁 Follow-up</div><div class="fd">Not closed? Schedule next contact. Every "no" is a "not yet."</div></div>
+  </div>
+
+  <div class="card" style="--cc:var(--green);margin-bottom:1rem">
+    <div class="ct"><span class="ci">📈</span>How You Improve Each Stage as a Supervisor</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <tr><th>Stage</th><th>Common Agent Failure</th><th>Your Supervisor Action</th></tr>
+        <tr><td>Opening</td><td>Generic, robotic — customer hangs up early</td><td>A/B test 3 opening lines weekly. Track early hang-up rate. Roll out the lowest-drop version team-wide.</td></tr>
+        <tr><td>Discovery</td><td>Skips to pitch — agent doesn't listen</td><td>Call review exercise: "Count how many questions the agent asks before pitching." Less than 2 = immediate coaching.</td></tr>
+        <tr><td>Pitching</td><td>Feature dumping, no benefit framing</td><td>Script rewrite: every feature followed by "This means for you…" — drill until it's natural, not read.</td></tr>
+        <tr><td>Objection</td><td>Agent gets defensive or gives up</td><td>Build an Objection Playbook — top 5 objections with scripted responses. Weekly roleplay drill.</td></tr>
+        <tr><td>Closing</td><td>"Do you want it?" — too weak, too passive</td><td>Teach assumptive close: "Should I go ahead and process this for you today?" Coach until the ask is confident.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card" style="--cc:var(--blue)">
+      <div class="ct"><span class="ci">📉</span>Diagnosing Low Conversion</div>
+      <div class="tl">
+        <div class="ti"><div class="td2">1</div><div class="tb"><div class="tt">Pull data by stage</div><div class="ts">Where in the call do most drops happen? Opening, pitch, or objection? The data tells you where to focus.</div></div></div>
+        <div class="ti"><div class="td2">2</div><div class="tb"><div class="tt">Listen to 10–15 recordings personally</div><div class="ts">Numbers show what, recordings show why. You'll catch tone, pacing, and language the dashboard won't.</div></div></div>
+        <div class="ti"><div class="td2">3</div><div class="tb"><div class="tt">Map each agent's failure point</div><div class="ts">Agent A loses at objection. Agent B loses at close. Different problems = different coaching.</div></div></div>
+        <div class="ti"><div class="td2">4</div><div class="tb"><div class="tt">Fix one stage at a time</div><div class="ts">"This week, we're fixing one thing: the price objection." Focused beats scattered every time.</div></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="--cc:var(--red)">
+      <div class="ct"><span class="ci">🎙️</span>What a Great Call Looks Like — Know This Cold</div>
+      <ul class="bl" style="--cc:var(--red)">
+        <li><b>Strong hook in 8–10 seconds</b> — customer decides to keep listening within the first sentence.</li>
+        <li><b>At least 2 discovery questions</b> — agent listens before pitching. Builds rapport and shows respect.</li>
+        <li><b>Benefit-led pitch</b> — not "this product has X feature" but "this means you'll save X time / money."</li>
+        <li><b>Objection acknowledged, not argued</b> — "That's a fair concern. Here's how other customers handled it…"</li>
+        <li><b>Confident assumptive close</b> — no begging. "Shall I go ahead and set this up for you today?"</li>
+        <li><b>Clear next step regardless of outcome</b> — sale or follow-up date. Never leave a call open-ended.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INITIATIVE -->
+<section id="initiative" class="sec">
+  <div class="sh"><div class="shn">03</div><div><div class="sht">HR Topic 3 · Most Important</div><div class="shh">Initiative & Strategic Thinking</div><div class="shs">HR explicitly said: don't be basic. Show your own ideas. Be proactive, not a follower of existing process.</div></div></div>
+
+  <div class="warn"><span style="font-size:1.3rem">🚫</span><span><b>Never say this:</b> "I learned it from my previous TL" or "I follow what was already in place." HR will flag you as passive immediately. Every initiative must be framed as <b>your own idea, your own system, your own observation.</b></span></div>
+
+  <div class="g2">
+    <div class="card" style="--cc:var(--green)">
+      <div class="ct"><span class="ci">📝</span>Initiative 1: Script Improvement System</div>
+      <ul class="bl" style="--cc:var(--green)">
+        <li><b>What I do:</b> Every week, I listen to 10–15 recordings and tag them — strong open, weak objection, good close.</li>
+        <li><b>Pattern finding:</b> I find the 2–3 moments appearing most in lost sales. That's where I rewrite the script.</li>
+        <li><b>A/B testing:</b> Split team — half old script, half new. Run for one week. Compare conversion. Roll out the winner.</li>
+        <li><b>Result framing:</b> "This system helped me improve team conversion by approximately X% within [timeframe]."</li>
+      </ul>
+      <div class="callout g"><span class="ci2">💬</span><span><b>Say in interview:</b> "I don't wait for the script to be updated from above. I build a feedback loop between call performance and script quality — it's a system I created and run independently."</span></div>
+    </div>
+
+    <div class="card" style="--cc:var(--blue)">
+      <div class="ct"><span class="ci">⚡</span>Initiative 2: Daily Tracking + Quick Coaching</div>
+      <ul class="bl" style="--cc:var(--blue)">
+        <li><b>The system:</b> Live tracking sheet — each agent's calls, conversions, revenue updated every 2 hours.</li>
+        <li><b>Early warning:</b> By 10AM I can see who's behind. I pull that agent aside for a 5-minute targeted fix session.</li>
+        <li><b>Why it works:</b> A 5-minute intervention at 10AM prevents a full-day slump. EOD reviews are too late to recover.</li>
+        <li><b>Visibility effect:</b> When the team can see each other's real-time numbers, they push themselves.</li>
+      </ul>
+      <div class="callout b"><span class="ci2">💬</span><span><b>Say in interview:</b> "I built this tracking system because end-of-day reviews were too late to change outcomes. Real-time visibility changes behavior."</span></div>
+    </div>
+
+    <div class="card" style="--cc:var(--amber)">
+      <div class="ct"><span class="ci">🏆</span>Initiative 3: Mini Competitions & Incentives</div>
+      <ul class="bl" style="--cc:var(--amber)">
+        <li><b>Weekly sprint:</b> "First agent to hit 15 conversions this week gets [reward]." Small prize, big motivation lift.</li>
+        <li><b>Team vs team:</b> Split into two groups. Losing half buys coffee. Creates camaraderie AND competition.</li>
+        <li><b>Personal bests:</b> Beat your own last week's score — inclusive format where everyone can win.</li>
+        <li><b>Track the incentives:</b> I track which formats drive sustained improvement vs. one-day spikes. I rotate to keep it fresh.</li>
+      </ul>
+      <div class="callout a"><span class="ci2">💬</span><span><b>Say in interview:</b> "Incentives work best when they're visible, immediate, and varied. I rotate the format so agents don't get bored with the same structure."</span></div>
+    </div>
+
+    <div class="card" style="--cc:var(--purple)">
+      <div class="ct"><span class="ci">📚</span>Initiative 4: Objection Playbook</div>
+      <ul class="bl" style="--cc:var(--purple)">
+        <li><b>What it is:</b> A living document — the top 8–10 objections customers give, with 2–3 tested responses for each.</li>
+        <li><b>How I build it:</b> Pull the most common lost-sale reasons from call notes. Write responses. Test in real calls. Keep what works.</li>
+        <li><b>Monthly update:</b> As product and market changes, so do objections. I review and update every month.</li>
+        <li><b>Onboarding use:</b> New agents get it on day one — cuts ramp-up time significantly.</li>
+      </ul>
+      <div class="callout" style="border-left-color:var(--purple);background:rgba(176,108,255,.06)"><span class="ci2">💬</span><span><b>Say in interview:</b> "I treat objections as data, not roadblocks. A playbook built from real calls turns past losses into future advantages."</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOUGH SITUATIONS -->
+<section id="tough" class="sec">
+  <div class="sh"><div class="shn">04</div><div><div class="sht">HR Topic 4 · Use Real Examples</div><div class="shh">Handling Tough Situations</div><div class="shs">HR wants: Situation → Analysis → Action → Result (with % if possible). Show ownership, not excuses.</div></div></div>
+
+  <div class="callout a" style="margin-bottom:1rem"><span class="ci2">⭐</span><span><b>STAR Reminder:</b> <b>S</b>ituation (10%) → <b>T</b>ask (10%) → <b>A</b>ction (60%) → <b>R</b>esult (20%). Most candidates spend too long on S&T. The Action is where you're actually being evaluated.</span></div>
+
+  <div class="ql">
+
+    <div class="qi">
+      <div class="qh" onclick="tq(this)"><span class="qn">1</span><span class="qcat cs">Scenario</span><span class="dif dh">● Hard</span><span class="qt">Your team's conversion rate dropped significantly for two consecutive weeks. Walk me through exactly what you did.</span><span class="qar">▼</span></div>
+      <div class="qb"><div class="qbi">
+        <div class="al">✦ Model Answer (STAR)</div>
+        <div class="at">
+          <b>Situation:</b> "Our team's conversion rate dropped from 18% to 11% over two weeks, coinciding with the launch of a new product bundle."<br><br>
+          <b>Task:</b> "As Supervisor, I needed to diagnose the cause fast and recover before the monthly target was at serious risk."<br><br>
+          <b>Action:</b> "First, I didn't assume — I pulled the data broken down by agent, by call stage, and by time of day. The drop was concentrated in the objection stage, specifically around the new bundle's price point.<br><br>
+          I then listened to 15 call recordings personally — not delegated. I heard that agents were struggling to justify the bundle price vs. the previous single product.<br><br>
+          Within 48 hours, I rewrote the price objection response — reframing it around total value, not unit cost. I ran a 30-minute focused briefing: one specific fix, not a full training. I also created a visual comparison card agents could reference during live calls.<br><br>
+          The following week, I did live monitoring on the 3 lowest-converting agents and gave real-time feedback after each call."<br><br>
+          <b>Result:</b> <em>"By week three, conversion recovered to 16%. By week four, we hit 19% — slightly above our original baseline. The comparison card became a permanent part of our script materials."</em>
+        </div>
+        <div class="atip"><strong>⚡ Key:</strong> Data first, personal involvement (not delegated), specific fast action (48 hours), measurable result. That's the combination HR wants to see.</div>
+      </div></div>
+    </div>
+
+    <div class="qi">
+      <div class="qh" onclick="tq(this)"><span class="qn">2</span><span class="qcat cs">Scenario</span><span class="dif dh">● Hard</span><span class="qt">Three agents on your team are significantly underperforming and pulling down the team's revenue target. What do you do?</span><span class="qar">▼</span></div>
+      <div class="qb"><div class="qbi">
+        <div class="al">✦ Model Answer</div>
+        <div class="at">
+          "I start by separating the three cases — because 'underperforming' almost never has the same root cause across people.<br><br>
+          <b>Step 1 — Individual diagnosis:</b> I look at each agent's data: call volume, AHT, conversion per stage. Then I listen to 3–5 of their calls. One might have high volume but low conversion — a pitch problem. Another might have low volume — motivation or time management. A third might convert on low-value deals — a targeting problem.<br><br>
+          <b>Step 2 — Specific 1-on-1 coaching:</b> I meet each separately with their individual data. Not a group lecture. I show exactly where they're losing — framed as 'here's the one thing we're fixing this week,' not a criticism session.<br><br>
+          <b>Step 3 — Sprint target:</b> I give each a private weekly target that's a step up from their current number — not the full team target immediately. Small wins rebuild confidence faster than big pressure.<br><br>
+          <b>Step 4 — Visible leaderboard:</b> I make progress public. Even small improvements get announced. Peer visibility motivates better than anything I can say.<br><br>
+          <b>Result framing:</b> <em>"Typically within 2–3 weeks of this approach, 1–2 of the three agents recover meaningfully. If one doesn't respond after full support, I have an honest conversation about whether this role is the right fit for them."</em>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="qi">
+      <div class="qh" onclick="tq(this)"><span class="qn">3</span><span class="qcat cs">Scenario</span><span class="dif dh">● Hard</span><span class="qt">Management increases your monthly revenue target by 25% with no additional headcount. How do you respond?</span><span class="qar">▼</span></div>
+      <div class="qb"><div class="qbi">
+        <div class="al">✦ Model Answer</div>
+        <div class="at">
+          "I don't just say yes and stress the team. And I don't push back without data. I do both — commit to the direction and present a realistic plan.<br><br>
+          <b>My first response:</b> 'I understand the target. Give me 24 hours to come back with a breakdown of what's achievable and what we'd need to close the remaining gap.'<br><br>
+          <b>Then I build the analysis:</b> What does 25% mean per agent per day? Where is the unused capacity — agents not yet at their call volume ceiling, conversion rates below our team best, underused follow-up calls? That's where the real headroom lives.<br><br>
+          <b>What I present back:</b><br>
+          — 'We can realistically reach +15% through call volume optimization and script improvement. Here's the specific plan with a timeline.'<br>
+          — 'To reach +25%, we would need [X] — either a temporary resource or reduced admin burden on agents so they can spend more time selling.'<br><br>
+          <em>"I commit to the maximum achievable with full transparency. Overpromising and underdelivering is worse for everyone than an honest, data-backed forecast."</em>
+        </div>
+        <div class="atip"><strong>⚡ Key:</strong> This shows analytical grounding + professional assertiveness + solution orientation. HR values this over blind "yes." It's the answer a real leader gives.</div>
+      </div></div>
+    </div>
+
+    <div class="qi">
+      <div class="qh" onclick="tq(this)"><span class="qn">4</span><span class="qcat cs">Scenario</span><span class="dif dm">● Medium</span><span class="qt">A top-performing agent suddenly tells you they want to resign. What do you do?</span><span class="qar">▼</span></div>
+      <div class="qb"><div class="qbi">
+        <div class="al">✦ Model Answer</div>
+        <div class="at">
+          "My first move is a private, honest conversation — not to talk them out of it, but to genuinely understand why.<br><br>
+          <b>I ask three specific questions:</b><br>
+          — 'What would need to change for you to want to stay?'<br>
+          — 'Is this about the work itself, the team, or something outside?'<br>
+          — 'Have you already made your decision, or are you still considering?'<br><br>
+          <b>If it's fixable</b> — workload, recognition, growth path — I propose something concrete with a real timeline. Not 'I'll talk to management.' I tell them exactly what I'll do and when. Then I actually follow through.<br><br>
+          <b>If the decision is final</b> — I respect it professionally. I ask for a clean handover and an honest exit conversation. How someone leaves affects the rest of the team.<br><br>
+          <b>The honest reflection:</b> <em>"A top performer resigning is partly a retention failure, not just a surprise event. In hindsight, there were probably signs — drop in enthusiasm, less engagement. I use that as a lesson: have career conversations proactively, every single month, not reactively when someone's already decided to leave."</em>
+        </div>
+        <div class="atip"><strong>⚡ Key:</strong> The self-reflection at the end shows real leadership maturity — you're not just solving this case, you're learning from it systemically.</div>
+      </div></div>
+    </div>
+
+    <div class="qi">
+      <div class="qh" onclick="tq(this)"><span class="qn">5</span><span class="qcat cs">Scenario</span><span class="dif dm">● Medium</span><span class="qt">Team morale is low after a difficult quarter with missed targets. How do you rebuild it?</span><span class="qar">▼</span></div>
+      <div class="qb"><div class="qbi">
+        <div class="al">✦ Model Answer</div>
+        <div class="at">
+          "Low morale after a tough quarter usually comes from one of three things: effort not being seen, the target feeling unfair, or no visible path forward. I address each one.<br><br>
+          <b>Step 1 — Acknowledge it directly:</b> I open the next team meeting by naming the difficulty. 'Last quarter was hard. I see how hard you all worked, and I want to talk about it openly.' Skipping over it or pretending it didn't happen makes things worse.<br><br>
+          <b>Step 2 — Reset the narrative:</b> I reframe — what did we actually learn? What worked even if the number didn't? This isn't toxic positivity; it's extracting real value from difficulty.<br><br>
+          <b>Step 3 — Build early wins:</b> I set the first two weeks of the new quarter with slightly lower internal targets — achievable ones. Confidence is rebuilt through small consecutive wins, not one big speech.<br><br>
+          <b>Step 4 — Bring the energy back:</b> A low-stakes team challenge. A mini competition with a small, fun reward. Sometimes what a team needs after a tough stretch is permission to enjoy the work again.<br><br>
+          <em>"The goal isn't to make the team forget the hard quarter. It's to make them believe the next one can be different — and that their Supervisor has a clear plan to get there."</em>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Q&A CORE -->
+<section id="qacore" class="sec">
+  <div class="sh"><div class="shn">05</div><div><div class="sht">Cheat Sheet</div><div class="shh">⭐️ Q&A Core (Brief)</div><div class="shs">To-the-point answers. Focus on the "Winning Logic" for fast memorization.</div></div></div>
+
+  <div class="ql">
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">1</span><span class="qcat cx">Self</span><span class="qt">Tell me about yourself & why this role?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Proven Performance as Agent] &rarr; [Passion for coaching others] &rarr; [Goal: Scale impact as a leader].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">2</span><span class="qcat cx">Self</span><span class="qt">Biggest weakness as a leader?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [High standards/Impatient] &rarr; [Fix: Setting explicit timelines & more frequent check-ins for adoption].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">3</span><span class="qcat cl">Leader</span><span class="qt">Describe your leadership style.</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Structured Autonomy] &rarr; [Clear KPIs/Accountability + Flexible methods] &rarr; [Data-driven decisions, not gut feeling].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">4</span><span class="qcat cl">Leader</span><span class="qt">How to build trust with a new team?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Listen First] &rarr; [1-on-1 listening sessions] &rarr; [Reliability: Follow through on small promises consistently].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">5</span><span class="qcat co">Sales</span><span class="qt">How to improve a flat conversion rate?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Audit Calls] &rarr; [Find failure stage] &rarr; [Targeted Drill/Script Update] &rarr; [A/B Test] &rarr; [Rollout].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">6</span><span class="qcat co">Sales</span><span class="qt">Coaching an agent who fails at objections?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Identify root objection] &rarr; [Provide scripts] &rarr; [Intense Roleplay until confidence shifts] &rarr; [Buy-time phrases].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">7</span><span class="qcat cl">Init</span><span class="qt">Tell me about an initiative you created.</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Observed Gap/Inconsistency] &rarr; [Analyzed Top Performers] &rarr; [Created Playbook/System] &rarr; [Result: % Improvement].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">8</span><span class="qcat cp">People</span><span class="qt">Pushing results vs. avoiding burnout?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Sustainable Intensity] &rarr; [Rhythm of Peaks & Recovery] &rarr; [Early detection via data/engagement signals].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">9</span><span class="qcat cp">People</span><span class="qt">Handling conflict between two agents?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Separate listening] &rarr; [Joint agreement on <i>behavior</i>, not <i>who is right</i>] &rarr; [Consistent monitoring].</div></div></div></div>
+    
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">10</span><span class="qcat cx">Self</span><span class="qt">Where do you see yourself in 2-3 years?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="at"><b>Logic:</b> [Top-tier Team performance] &rarr; [Develop successor/Future leader] &rarr; [Contribute to program/strategic level].</div></div></div></div>
+  </div>
+</section>
+
+<!-- FULL Q&A -->
+<section id="qa" class="sec">
+  <div class="sh"><div class="shn">06</div><div><div class="sht">Practice Questions · All Topics</div><div class="shh">Full Q&A Bank</div><div class="shs">30 questions mapped to the HR kisi-kisi. Practice saying every answer out loud — don't just read them.</div></div></div>
+
+  <div class="ql">
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">1</span><span class="qcat cx">Self</span><span class="dif de">● Easy</span><span class="qt">Tell me about yourself and why you're applying for this Supervisor role.</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "I've spent [X] years in telesales, starting as an agent and growing into a senior position where I was informally leading and coaching teammates alongside my own performance targets. I was recognized as [Best Agent / top performer] in [period].<br><br>
+      But what I found more rewarding than my own numbers was when I helped a teammate improve their conversion rate. Seeing their results go up from a coaching conversation I led — that felt like a bigger impact than any single sale I made.<br><br>
+      I'm applying for this Supervisor role because I want to create that impact at scale. I've built my own systems for call analysis, daily performance tracking, and team motivation. I want to apply them with the full accountability and scope of a leadership position."
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">2</span><span class="qcat cx">Self</span><span class="dif dm">● Medium</span><span class="qt">What is your biggest weakness as a leader?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "My biggest weakness is that I sometimes hold high standards that not everyone on the team is immediately ready for. I can get impatient when a process I've built isn't being adopted consistently enough.<br><br>
+      I've managed this by being explicit about timelines and building in more early check-ins. Instead of expecting instant adoption, I now say 'by end of week two, I expect everyone to be using this approach' — and I schedule two or three touchpoints in that window to catch gaps early before they become habits.<br><br>
+      That shift from expecting results to building them deliberately has made me a more effective coach."
+    </div><div class="atip"><strong>⚡ Key:</strong> Real weakness + specific self-correction = credibility. Interviewers immediately see through "I work too hard" style fake weaknesses.</div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">3</span><span class="qcat cl">Leadership</span><span class="dif dm">● Medium</span><span class="qt">Describe your leadership style.</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "I lead with what I call structured autonomy — I set very clear expectations and hold people accountable to outcomes, but I give them flexibility in how they get there. I'm not a micromanager, but I'm also not hands-off.<br><br>
+      Practically, I adapt by person and situation. <b>For a new agent</b>, I'm more directive — clear instructions and frequent check-ins. <b>For an experienced agent</b>, I step back and coach rather than direct. <b>In a crisis</b> — a volume spike, a system outage, a major escalation — I switch to decisive, direct mode quickly.<br><br>
+      I also believe strongly in data-driven leadership. I don't manage by gut feeling. I build visibility into the team's numbers so my coaching decisions are based on what the data actually shows, not assumptions."
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">4</span><span class="qcat cl">Leadership</span><span class="dif dm">● Medium</span><span class="qt">How do you build trust with a new team quickly?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "I follow a simple principle: <b>listen first, lead second.</b><br><br>
+      In the first two weeks, I have a 1-on-1 with every agent — not a performance review, a listening session. I ask: 'What's working that I shouldn't change? What makes your job harder than it needs to be? What do you need from a Supervisor that you haven't always had?'<br><br>
+      These questions do three things: they give me real intelligence, they signal that I value each person's experience, and they set a tone of transparency that makes the whole relationship easier from day one.<br><br>
+      Then I do small things consistently: every commitment I make, I follow through on. Trust is built in those small moments — not in big gestures. And I'm honest about what I don't know yet. A new Supervisor who pretends to know everything loses credibility fast."
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">5</span><span class="qcat co">Telesales</span><span class="dif dm">● Medium</span><span class="qt">How would you improve a team's conversion rate that has been flat for two months?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "A flat conversion rate tells me one of three things: the script is stale, the targeting is wrong, or the team's skills have plateaued. I need to find which one before acting.<br><br>
+      <b>Week 1:</b> Full call audit — I listen to 20 calls across the team, map exactly where in the funnel each lost sale happened.<br>
+      <b>Week 2:</b> Rebuild the weakest stage specifically. If it's objection handling, I run a focused drill. Not a general training — one targeted session on one specific problem.<br>
+      <b>Week 3:</b> Script variation test — one group on the updated version, one on the original. 7 days. Compare conversion daily.<br>
+      <b>Week 4:</b> Roll out the winner. Measure the delta.<br><br>
+      <em>"A focused 4-week sprint like this typically moves conversion by 3–5 percentage points. On a team of 10 agents, that can mean significant revenue recovery."</em>
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">6</span><span class="qcat co">Telesales</span><span class="dif dm">● Medium</span><span class="qt">An agent consistently struggles with objection handling. How do you coach them?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "Objection handling is usually a confidence issue disguised as a knowledge problem. Most agents know the facts — they panic when the customer pushes back.<br><br>
+      My approach: I first identify which specific objections are causing drops — price, timing, trust, or product fit. Then I give them scripted responses, but more importantly, I drill through <b>roleplay</b>. I play the difficult customer. Real objections from real recordings. We go 5–10 rounds until their tone shifts from defensive to calm and confident.<br><br>
+      The goal isn't memorizing lines — it's getting comfortable enough to think clearly under pressure. I also give them one universal phrase to buy time: <em>'That's a really fair point — let me make sure I give you the full picture.'</em> Three seconds, composure maintained, leads naturally into the response."
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">7</span><span class="qcat cl">Initiative</span><span class="dif dh">● Hard</span><span class="qt">Tell me about something you created or initiated that improved your team's performance — without being asked.</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer (STAR — Your Signature Story)</div><div class="at">
+      <b>Situation:</b> "I noticed that even though we had a team script, every agent was using it slightly differently — and conversion rates varied by as much as 8 percentage points between our best and bottom agents."<br><br>
+      <b>Task:</b> "Nobody asked me to fix this. But I knew the inconsistency was costing us real revenue every single day."<br><br>
+      <b>Action:</b> "I spent two weeks listening to the top-converting calls from our best agents. I extracted the specific phrases, timing, and pacing that made them work. I built an updated script and a companion objection playbook — tested it informally with two agents first, refined it based on their feedback, then presented it to the full team with a one-week test run."<br><br>
+      <b>Result:</b> <em>"Within one month, the performance gap between top and bottom agents narrowed from 8 percentage points to 3. Overall team conversion improved by approximately 12%. The playbook became part of our standard onboarding for every new agent."</em>
+    </div><div class="atip"><strong>⚡ This is your signature initiative story.</strong> Rehearse every detail until it flows naturally and confidently — this is the answer that separates you from passive candidates.</div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">8</span><span class="qcat cp">People</span><span class="dif dm">● Medium</span><span class="qt">How do you balance pushing for results while keeping your team from burning out?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "I think the tension between performance and wellbeing is a false choice if you manage it with intentionality. The key is sustainable intensity — not pushing at 100% every day, but building a rhythm with peaks and deliberate recovery.<br><br>
+      Practically: I push hard during campaign and target periods, but I build lighter activities after intense stretches. I watch for burnout signals — drop in call quality, shorter calls, quieter presence in team chat, less initiative. When I see them, I address it in a 1-on-1 immediately, before it becomes a resignation.<br><br>
+      I also believe that when agents understand <em>why</em> a target matters — how it connects directly to their own earnings and career — they self-motivate. Pressure from understanding is sustainable. Pressure from fear is not. My job is to create the first kind."
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">9</span><span class="qcat cp">People</span><span class="dif dh">● Hard</span><span class="qt">Two agents have a conflict that's affecting the whole team's dynamic. What do you do?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "The worst moves here are to ignore it or handle it publicly. Both destroy trust for different reasons.<br><br>
+      <b>Step 1:</b> I meet each agent separately. Not to judge — to understand. I listen fully. I ask: 'What happened from your perspective?' and 'What do you need to move forward?'<br><br>
+      <b>Step 2:</b> I let both cool down. Then I bring them together privately. Before we start, I set one rule: 'We're not here to decide who was right. We're here to agree on how we work together from today.'<br><br>
+      <b>Step 3:</b> I facilitate — not judge. I summarize each person's position and ask them each to commit to one specific behavioral change going forward.<br><br>
+      <b>Step 4:</b> I monitor for the next two weeks. Conflict that seems resolved but isn't followed up will resurface.<br><br>
+      <em>"On the floor, professional respect is non-negotiable. Friendship is optional. I make that expectation clear from the start, which prevents most conflicts from escalating in the first place."</em>
+    </div></div></div></div>
+
+    <div class="qi"><div class="qh" onclick="tq(this)"><span class="qn">10</span><span class="qcat cx">Self</span><span class="dif de">● Easy</span><span class="qt">Where do you see yourself in 2–3 years?</span><span class="qar">▼</span></div>
+    <div class="qb"><div class="qbi"><div class="al">✦ Model Answer</div><div class="at">
+      "In 2–3 years, I want to have built a telesales team that consistently performs in the top tier — not because they're pressured to, but because they genuinely understand the impact of their work and take pride in it.<br><br>
+      I also want to have developed at least one agent from my team who's ready for a Supervisor role themselves. That's how I measure real leadership success — not by my own advancement, but by how many people advanced because of the environment I created.<br><br>
+      Beyond the team level, I'm interested in contributing at a program level — improving how we onboard new agents, how we structure scripts for new product launches, how we build the systems that make the whole operation more consistent."
+    </div></div></div></div>
+
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips" class="sec">
+  <div class="sh"><div class="shn">06</div><div><div class="sht">Delivery · English · Presence</div><div class="shh">Tips & Power Phrases</div><div class="shs">How to deliver answers with confidence, clarity, and strategic framing — in full English, every time.</div></div></div>
+
+  <div class="warn"><span style="font-size:1.3rem">🎙️</span><span><b>Full English practice drill:</b> Record yourself answering each section out loud on your phone. Listen back. The goal is that when you're nervous on interview day, your English flows from muscle memory — not from translating in your head or searching for words.</span></div>
+
+  <div class="g2" style="margin-bottom:1rem">
+    <div class="card" style="--cc:var(--green)">
+      <div class="ct"><span class="ci">✅</span>Do This</div>
+      <ul class="bl" style="--cc:var(--green)">
+        <li><b>Lead with the main point first.</b> Don't build up slowly — state the conclusion, then explain. "The first thing I do is pull the data. Here's why..."</li>
+        <li><b>Use numbers whenever possible.</b> "Conversion improved by 12%" is 10x more credible than "conversion got better."</li>
+        <li><b>Pause before hard questions.</b> "That's a great question — give me a moment to think." Sounds confident, not lost.</li>
+        <li><b>Own your initiatives.</b> Use "I built," "I created," "I designed" — never "we used to do" or "my TL showed me."</li>
+        <li><b>Frame all problems as solved.</b> Not "this was very difficult" but "here's what I did, and here's what happened."</li>
+        <li><b>Ask two smart questions at the end.</b> Prepared questions signal genuine interest and preparation.</li>
+      </ul>
+    </div>
+    <div class="card" style="--cc:var(--red)">
+      <div class="ct"><span class="ci">❌</span>Avoid This</div>
+      <ul class="bl" style="--cc:var(--red)">
+        <li><b>Switching to Bahasa</b> — even one word. Stay in English for the entire interview, even under pressure.</li>
+        <li><b>"I learned this from my TL."</b> HR explicitly flagged this. Every idea you share must be framed as yours.</li>
+        <li><b>Answers over 2 minutes.</b> After 120 seconds, most interviewers have stopped listening. Practice timing yourself.</li>
+        <li><b>General statements with no examples.</b> "I'm good at coaching" is worthless. Show a specific moment and result.</li>
+        <li><b>Blaming external factors.</b> Always show what YOU did in response — not what happened to you.</li>
+        <li><b>"I don't know" without a follow-up.</b> Always add: "but here's how I'd find out and what I'd do."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="--cc:var(--amber);margin-bottom:1rem">
+    <div class="ct"><span class="ci">💬</span>Power Phrases — Memorise These, Use Them Naturally</div>
+    <div class="phrases">
+      <div class="ph">I don't wait to be told there's a problem. I build systems that surface the problem before it becomes critical.</div>
+      <div class="ph">My job as a Supervisor isn't to be the best salesperson on the team. It's to create the environment where every agent on the team can be their best.</div>
+      <div class="ph">I treat objections as data. Every time a customer says no, they're telling me exactly where the script needs to improve.</div>
+      <div class="ph">When performance drops, I go to the data first and assumptions last. The data tells a more accurate story than gut feeling.</div>
+      <div class="ph">Motivation through fear is short-term. Motivation through visible progress — when people can see their own momentum — is sustainable.</div>
+      <div class="ph">A team that needs me present to perform hasn't been built properly. My goal is to create independence, not dependency on me.</div>
+      <div class="ph">I can teach skills. What I can't teach is the willingness to be coached. That's why attitude is the first thing I look for.</div>
+    </div>
+  </div>
+
+  <div class="card" style="--cc:var(--blue)">
+    <div class="ct"><span class="ci">🎤</span>Smart Questions to Ask the Interviewer</div>
+    <ul class="bl" style="--cc:var(--blue)">
+      <li>"What does success look like for this Supervisor role in the first 90 days?"</li>
+      <li>"What is the team's biggest performance challenge right now — and what's been tried so far?"</li>
+      <li>"How much autonomy does a Supervisor have to implement their own systems — for example, script changes or incentive structures?"</li>
+      <li>"What is the current team size, and what is the typical agent tenure?"</li>
+      <li>"How does the Supervisor role interact with the product and campaign teams at TikTok Shop?"</li>
+    </ul>
+    <div class="callout b"><span class="ci2">💡</span><span><b>Why this matters:</b> Candidates who ask specific, intelligent questions are seen as more serious, more prepared, and more likely to succeed. Asking nothing signals a lack of genuine interest.</span></div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>TikTok Shop · Telesales Supervisor Interview Guide · Built from HR Kisi-Kisi</p>
+  <p style="margin-top:.4rem">Practice out loud. Speak in English. <span>Own your story.</span> Good luck. 🚀</p>
+</footer>
+
+<script>
+function go(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  const order=['overview','jobdesk','telesales','initiative','tough','qacore','qa','tips'];
+  
+  const buttons = document.querySelectorAll('.nb');
+  const btnIndex = order.indexOf(id);
+  if(btnIndex !== -1) buttons[btnIndex].classList.add('on');
+
+  window.scrollTo({top:document.querySelector('.nav').offsetTop-8,behavior:'smooth'});
+  if(id==='overview')trigBars();
+}
+function tq(h){
+  const item=h.parentElement;
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.qi.open').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+function trigBars(){
+  setTimeout(()=>{document.querySelectorAll('.sfill').forEach(b=>b.classList.add('go'))},150);
+}
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.sfill').forEach(b=>b.classList.add('go'))});
+},{threshold:.3});
+const sb=document.getElementById('sbars');
+if(sb)io.observe(sb);
+window.addEventListener('load',trigBars);
+</script>
+</body>
+</html>
